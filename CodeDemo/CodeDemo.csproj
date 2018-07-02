@@ -48,5 +48,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.IO\Framework.IO.csproj">
+      <Project>{fe538aa5-6331-46a4-b2ab-78e7e7579fa8}</Project>
+      <Name>Framework.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Serialize\Framework.Serialize.csproj">
+      <Project>{53856da8-7417-4a03-94ad-34dc92d3d843}</Project>
+      <Name>Framework.Serialize</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
