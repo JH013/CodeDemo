@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace Framework.Serialize
+namespace Framework.IO
 {
     /// <summary>
     /// txt文件操作，适用小文件

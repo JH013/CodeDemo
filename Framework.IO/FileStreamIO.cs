@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace Framework.Serialize
+namespace Framework.IO
 {
     /* 特点：1. FileStream表示在磁盘或网络路径上指向文件的流
      *      2. FileStream操作的是字节数据（byte）
