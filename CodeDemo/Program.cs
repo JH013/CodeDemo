@@ -35,12 +35,34 @@ namespace CodeDemo
             //}
 
 
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
-            var jj = WebRequestHelper.Get(@"http://192.168.1.150:5000/parse?q=价格怎么样&model=model_20180605-042101");
-            stopWatch.Stop();
-            TimeSpan ts = stopWatch.Elapsed;
-            var time = ts.Milliseconds;
+            //Stopwatch stopWatch = new Stopwatch();
+            //stopWatch.Start();
+            //var jj = WebRequestHelper.Get(@"http://192.168.1.150:5000/parse?q=价格怎么样&model=model_20180605-042101");
+            //stopWatch.Stop();
+            //TimeSpan ts = stopWatch.Elapsed;
+            //var time = ts.Milliseconds;
+
+            System.Timers.Timer timer = new System.Timers.Timer();
+
+            timer.Interval = 500;
+
+            timer.Elapsed += delegate
+            {
+                Console.WriteLine($"Timer Thread: {Thread.CurrentThread.ManagedThreadId}");
+
+                Console.WriteLine($"Is Thread Pool: {Thread.CurrentThread.IsThreadPoolThread}");
+
+                Console.WriteLine("Timer Action");
+
+                timer.Stop();
+            };
+
+            timer.Start();
+
+            Console.WriteLine("Main Action.");
+            Console.WriteLine($"Main Thread: {Thread.CurrentThread.ManagedThreadId}");
+
+            Console.ReadLine();
         }
     }
 }
