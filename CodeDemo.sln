@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Serialize", "Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.IO", "Framework.IO\Framework.IO.csproj", "{FE538AA5-6331-46A4-B2AB-78E7E7579FA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Http", "Framework.Http\Framework.Http.csproj", "{FE024048-BC9A-4EF0-AD04-9DEE70F7A53C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FE538AA5-6331-46A4-B2AB-78E7E7579FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE538AA5-6331-46A4-B2AB-78E7E7579FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE538AA5-6331-46A4-B2AB-78E7E7579FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE024048-BC9A-4EF0-AD04-9DEE70F7A53C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE024048-BC9A-4EF0-AD04-9DEE70F7A53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE024048-BC9A-4EF0-AD04-9DEE70F7A53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE024048-BC9A-4EF0-AD04-9DEE70F7A53C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

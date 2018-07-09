@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Http\Framework.Http.csproj">
+      <Project>{fe024048-bc9a-4ef0-ad04-9dee70f7a53c}</Project>
+      <Name>Framework.Http</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.IO\Framework.IO.csproj">
       <Project>{fe538aa5-6331-46a4-b2ab-78e7e7579fa8}</Project>
       <Name>Framework.IO</Name>
