@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92455C4F-9317-4EB0-BD26-9176CC6F3F4A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>CodeDemo</RootNamespace>
-    <AssemblyName>CodeDemo</AssemblyName>
+    <ProjectGuid>{57641D35-7834-4A92-959F-1215A50A339D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Log</RootNamespace>
+    <AssemblyName>Framework.Log</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,33 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Framework.Http\Framework.Http.csproj">
-      <Project>{fe024048-bc9a-4ef0-ad04-9dee70f7a53c}</Project>
-      <Name>Framework.Http</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.IO\Framework.IO.csproj">
-      <Project>{fe538aa5-6331-46a4-b2ab-78e7e7579fa8}</Project>
-      <Name>Framework.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.Log\Framework.Log.csproj">
-      <Project>{57641d35-7834-4a92-959f-1215a50a339d}</Project>
-      <Name>Framework.Log</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.Monitor\Framework.Monitor.csproj">
-      <Project>{60291bc4-fb96-4886-a349-d3176bbcead8}</Project>
-      <Name>Framework.Monitor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.Serialize\Framework.Serialize.csproj">
-      <Project>{53856da8-7417-4a03-94ad-34dc92d3d843}</Project>
-      <Name>Framework.Serialize</Name>
-    </ProjectReference>
+    <None Include="Log4Net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

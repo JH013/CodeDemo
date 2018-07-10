@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Http", "Framework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Monitor", "Framework.Monitor\Framework.Monitor.csproj", "{60291BC4-FB96-4886-A349-D3176BBCEAD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Timer", "Framework.Timer\Framework.Timer.csproj", "{A9EAF0E8-3A64-410A-9520-9188E83BE71B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Log", "Framework.Log\Framework.Log.csproj", "{57641D35-7834-4A92-959F-1215A50A339D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{60291BC4-FB96-4886-A349-D3176BBCEAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60291BC4-FB96-4886-A349-D3176BBCEAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60291BC4-FB96-4886-A349-D3176BBCEAD8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9EAF0E8-3A64-410A-9520-9188E83BE71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9EAF0E8-3A64-410A-9520-9188E83BE71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9EAF0E8-3A64-410A-9520-9188E83BE71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9EAF0E8-3A64-410A-9520-9188E83BE71B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57641D35-7834-4A92-959F-1215A50A339D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57641D35-7834-4A92-959F-1215A50A339D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57641D35-7834-4A92-959F-1215A50A339D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57641D35-7834-4A92-959F-1215A50A339D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,7 @@
 ﻿using Framework.Http;
 using Framework.IO;
+using Framework.Log;
+using Framework.Monitor;
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -42,27 +44,42 @@ namespace CodeDemo
             //TimeSpan ts = stopWatch.Elapsed;
             //var time = ts.Milliseconds;
 
-            System.Timers.Timer timer = new System.Timers.Timer();
+            //System.Timers.Timer timer = new System.Timers.Timer();
 
-            timer.Interval = 500;
+            //timer.Interval = 500;
 
-            timer.Elapsed += delegate
+            //timer.Elapsed += delegate
+            //{
+            //    Console.WriteLine($"Timer Thread: {Thread.CurrentThread.ManagedThreadId}");
+
+            //    Console.WriteLine($"Is Thread Pool: {Thread.CurrentThread.IsThreadPoolThread}");
+
+            //    Console.WriteLine("Timer Action");
+
+            //    timer.Stop();
+            //};
+
+            //timer.Start();
+
+            //Console.WriteLine("Main Action.");
+            //Console.WriteLine($"Main Thread: {Thread.CurrentThread.ManagedThreadId}");
+
+            //Console.ReadLine();
+
+            //var jj = ComputerInfo.GetWin32ProcessorInfos();
+
+            try
             {
-                Console.WriteLine($"Timer Thread: {Thread.CurrentThread.ManagedThreadId}");
-
-                Console.WriteLine($"Is Thread Pool: {Thread.CurrentThread.IsThreadPoolThread}");
-
-                Console.WriteLine("Timer Action");
-
-                timer.Stop();
-            };
-
-            timer.Start();
-
-            Console.WriteLine("Main Action.");
-            Console.WriteLine($"Main Thread: {Thread.CurrentThread.ManagedThreadId}");
-
-            Console.ReadLine();
+                Log.Info("Start du ChuFa.");
+                int i = 10;
+                int j = 0;
+                Log.Warn("This is a warning.");
+                var result = i / j;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("ChuFa error", ex);
+            }
         }
     }
 }
