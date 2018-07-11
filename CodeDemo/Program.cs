@@ -68,18 +68,43 @@ namespace CodeDemo
 
             //var jj = ComputerInfo.GetWin32ProcessorInfos();
 
-            try
-            {
-                Log.Info("Start du ChuFa.");
-                int i = 10;
-                int j = 0;
-                Log.Warn("This is a warning.");
-                var result = i / j;
-            }
-            catch (Exception ex)
-            {
-                Log.Error("ChuFa error", ex);
-            }
+            //ILogger logger = Logger.GetInstance(typeof(Program));
+
+            //PerformanceCounterCollect collector = new PerformanceCounterCollect("Processor", "% Processor Time", "_Total");
+
+            //PerformanceCounterCollect collector2 = new PerformanceCounterCollect("Process", "% Processor Time", "ConsoleApp5");
+
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        var result = collector2.Collect();
+            //        logger.Info($"CPU Utilization -> {result / Environment.ProcessorCount}%");
+            //        Thread.Sleep(1000);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        logger.Error("Error happened.", ex);
+            //    }
+            //}
+
+            //SharpZipLibHelper.Decompress(@"E:\ziptest.zip", "E:\\test123");
+
+            //SharpZipLibHelper.Decompress(@"C:\Users\13\Downloads\model_20180704-015925 (1).zip", "E:\\test123");
+
+            //WebRequestHelper.DownloadFile(@"http://192.168.1.249:8083/models/房产/model_20180704-015925.zip", "E:\\123.zip");
+
+            //string jj = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+
+            //CompressionHelper.Decompress(@"C:\Users\13\Downloads\model_20180704-015925.zip", "E:\\test123");
+
+            //SharpZipLibHelper.Decompress(@"E:\123.zip", "E:\\test123");
+
+            string filename = @"http://192.168.1.249:8083/models/房产/model_20180704-015925.zip";
+            var arr = filename.Split('/');
+            var project = arr[4].ToString();
+            var model = arr[5].Substring(0, arr[5].Length - 4);
+            filename = filename.Substring(filename.LastIndexOf(@"/") + 1);
         }
     }
 }

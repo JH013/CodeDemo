@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Framework.Http
@@ -47,6 +48,27 @@ namespace Framework.Http
             }
 
             return GetResponseString(request.GetResponse() as HttpWebResponse);
+        }
+
+        public static void DownloadFile(string url, string destFilePath)
+        {
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+            using (WebResponse response = request.GetResponse())
+            {
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    using(Stream stream = new FileStream(destFilePath, FileMode.Create))
+                    {
+                        byte[] bArr = new byte[1024];
+                        int size = responseStream.Read(bArr, 0, (int)bArr.Length);
+                        while (size > 0)
+                        {
+                            stream.Write(bArr, 0, size);
+                            size = responseStream.Read(bArr, 0, (int)bArr.Length);
+                        }
+                    }
+                }
+            }
         }
 
         private static string GetResponseString(HttpWebResponse webresponse)
