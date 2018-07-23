@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Monitor", "Framew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Log", "Framework.Log\Framework.Log.csproj", "{57641D35-7834-4A92-959F-1215A50A339D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.PythonInteractive", "Framework.PythonInteractive\Framework.PythonInteractive.csproj", "{D0A9864C-9626-498C-AFB8-C723AFB99166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.ProcessKit", "Framework.ProcessKit\Framework.ProcessKit.csproj", "{0CE5DAAD-E6C7-4EC1-ACD7-1DAA510764E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{57641D35-7834-4A92-959F-1215A50A339D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57641D35-7834-4A92-959F-1215A50A339D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57641D35-7834-4A92-959F-1215A50A339D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A9864C-9626-498C-AFB8-C723AFB99166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A9864C-9626-498C-AFB8-C723AFB99166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A9864C-9626-498C-AFB8-C723AFB99166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A9864C-9626-498C-AFB8-C723AFB99166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE5DAAD-E6C7-4EC1-ACD7-1DAA510764E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE5DAAD-E6C7-4EC1-ACD7-1DAA510764E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE5DAAD-E6C7-4EC1-ACD7-1DAA510764E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE5DAAD-E6C7-4EC1-ACD7-1DAA510764E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

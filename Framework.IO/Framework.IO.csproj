@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompressionHelper.cs" />
+    <Compile Include="Compression\CompressionHelper.cs" />
     <Compile Include="Compression\SharpZipLibHelper.cs" />
     <Compile Include="FileStreamIO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

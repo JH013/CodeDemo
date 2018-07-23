@@ -65,6 +65,14 @@
       <Project>{60291bc4-fb96-4886-a349-d3176bbcead8}</Project>
       <Name>Framework.Monitor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.ProcessKit\Framework.ProcessKit.csproj">
+      <Project>{0ce5daad-e6c7-4ec1-acd7-1daa510764e4}</Project>
+      <Name>Framework.ProcessKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.PythonInteractive\Framework.PythonInteractive.csproj">
+      <Project>{d0a9864c-9626-498c-afb8-c723afb99166}</Project>
+      <Name>Framework.PythonInteractive</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.Serialize\Framework.Serialize.csproj">
       <Project>{53856da8-7417-4a03-94ad-34dc92d3d843}</Project>
       <Name>Framework.Serialize</Name>

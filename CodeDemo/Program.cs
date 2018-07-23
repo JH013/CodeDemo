@@ -1,10 +1,7 @@
-﻿using Framework.Http;
-using Framework.IO;
-using Framework.Log;
-using Framework.Monitor;
+﻿using Framework.Log;
+using Framework.PythonInteractive;
 using System;
-using System.Diagnostics;
-using System.Threading;
+using System.Collections.Generic;
 
 namespace CodeDemo
 {
@@ -68,18 +65,21 @@ namespace CodeDemo
 
             //var jj = ComputerInfo.GetWin32ProcessorInfos();
 
-            //ILogger logger = Logger.GetInstance(typeof(Program));
+            ILogger logger = Logger.GetInstance(typeof(Program));
 
             //PerformanceCounterCollect collector = new PerformanceCounterCollect("Processor", "% Processor Time", "_Total");
 
             //PerformanceCounterCollect collector2 = new PerformanceCounterCollect("Process", "% Processor Time", "ConsoleApp5");
 
+            //PerformanceCounterCollect collector3 = new PerformanceCounterCollect("Process", "Working Set - Private", "ConsoleApp5");
+
+            //ProcessInfo processInfo = new ProcessInfo("ConsoleApp5");
+
             //while (true)
             //{
             //    try
             //    {
-            //        var result = collector2.Collect();
-            //        logger.Info($"CPU Utilization -> {result / Environment.ProcessorCount}%");
+            //        logger.Info($"CPU Utilization -> {processInfo.CpuUtilization}% --- Memory Usage -> {processInfo.MemoryUsage} MB --- Thread Count -> {processInfo.ThreadCount}");
             //        Thread.Sleep(1000);
             //    }
             //    catch (Exception ex)
@@ -87,6 +87,13 @@ namespace CodeDemo
             //        logger.Error("Error happened.", ex);
             //    }
             //}
+
+
+
+
+
+
+
 
             //SharpZipLibHelper.Decompress(@"E:\ziptest.zip", "E:\\test123");
 
@@ -100,11 +107,129 @@ namespace CodeDemo
 
             //SharpZipLibHelper.Decompress(@"E:\123.zip", "E:\\test123");
 
-            string filename = @"http://192.168.1.249:8083/models/房产/model_20180704-015925.zip";
-            var arr = filename.Split('/');
-            var project = arr[4].ToString();
-            var model = arr[5].Substring(0, arr[5].Length - 4);
-            filename = filename.Substring(filename.LastIndexOf(@"/") + 1);
+            //string filename = @"http://192.168.1.249:8083/models/房产/model_20180704-015925.zip";
+            //var arr = filename.Split('/');
+            //var project = arr[4].ToString();
+            //var model = arr[5].Substring(0, arr[5].Length - 4);
+            //filename = filename.Substring(filename.LastIndexOf(@"/") + 1);
+
+            //var result = dosplit(@"123\n\n45\n678\n\n52\n\n64\n\n", @"\n\n");
+
+            //IronPythonHelper.RunFunc("test.py", "say_hello");
+
+            //ProcessContainer container = new ProcessContainer();
+
+            //container.Add(new Process());
+
+            //var jj = container[1];
+
+            var jj = IronPythonHelper.RunFunc();
+            Console.WriteLine(jj.ToString());
+            Console.ReadKey();
         }
+
+
+        public static string[] DoSplit(string text, string sep)
+        {
+            var result = new List<string>();
+            RecurrenceSplit(text, sep, result);
+            return result.ToArray();
+        }
+
+        public static void RecurrenceSplit(string text, string sep, List<string> result)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return;
+            }
+            int sepIndex = text.IndexOf(sep);
+            if (sepIndex == -1)
+            {
+                result.Add(text);
+            }
+            else
+            {
+                int tempLength = sepIndex + sep.Length;
+                var temp = text.Substring(0, tempLength);
+                result.Add(temp);
+
+                RecurrenceSplit(text.Substring(tempLength, text.Length - tempLength), sep, result);
+            }
+
+        }
+
+
+        public static string[] dosplit(string text, string sep)
+        {
+            List<string> result = new List<string>();
+            char[] textArr = text.ToCharArray();
+            int index = 0;
+            string tmp = text;
+            while (index < text.Length)
+            {
+                int id = tmp.IndexOf(sep);
+                if (id == -1)
+                {
+                    result.Add(tmp.Substring(0));
+                    break;
+                }
+                else
+                {
+                    id += sep.Length;
+                    result.Add(tmp.Substring(0, id));
+                    index += id;
+                    tmp = tmp.Substring(id);
+                }
+            }
+            return result.ToArray();
+        }
+
+
+        //public static string[] StringSplit(string text, string separator)
+        //{
+        //    List<string> result = new List<string>();
+        //    char[] textArr = text.ToCharArray();
+        //    int index = 0;
+        //    for (int i = 0; i <= textArr.Length - 1;)
+        //    {
+        //        if (char.Equals(textArr[i], separator.First()))
+        //        {
+        //            var seLength = GetLength(textArr, i, separator);
+        //            var length = i - index + seLength;
+        //            result.Add(text.Substring(index, length));
+        //            i = index += length;
+        //        }
+        //        else
+        //        {
+        //            i++;
+        //        }
+        //    }
+        //    if (index < textArr.Length - 1)
+        //    {
+        //        result.Add(text.Substring(index, text.Length - index));
+        //    }
+        //    return result.ToArray();
+        //}
+
+        //public static int GetLength(char[] textArr, int index, string separator)
+        //{
+        //    int length = separator.Length;
+        //    while (index + length <= textArr.Length)
+        //    {
+        //        if (index + length > textArr.Length - 1)
+        //        {
+        //            break;
+        //        }
+        //        if (char.Equals(textArr[index + length], separator.First()))
+        //        {
+        //            length += separator.Length;
+        //        }
+        //        else
+        //        {
+        //            break;
+        //        }
+        //    }
+        //    return length;
+        //}
     }
 }
