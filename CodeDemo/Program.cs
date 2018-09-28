@@ -4,6 +4,8 @@ using System.Threading;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using Framework.RedisLib;
+using System.Threading.Tasks;
 
 namespace CodeDemo
 {
@@ -11,43 +13,25 @@ namespace CodeDemo
     {
         static void Main(string[] args)
         {
-            //List<Thread> pool = new List<Thread>();
+            var redisClient = new RedisHelper(0);
+            //消息入列
+            redisClient.ListRightPush("TaskMessage2", new TaskMessage { MerchantId = 1, TaskId = 1 });
+            //redisClient.ListRightPush("TaskMessage", new TaskMessage { MerchantId = 2, TaskId = 2 });
+            //redisClient.ListRightPush("TaskMessage", new TaskMessage { MerchantId = 3, TaskId = 3 });
+            //redisClient.ListRightPush("TaskMessage", new TaskMessage { MerchantId = 4, TaskId = 4 });
 
-            //for (int i = 0; i <= 100; i++)
-            //{
-            //    pool.Add(new Thread(TestHttp));
-            //}
+            ////var jj = MessageQueue.CurrentChatModels;
 
-            //foreach (var thread in pool)
-            //{
-            //    thread.Start();
-            //}
+            //var jj = redisClient.ListLeftPop<ChatModels>("Test");
 
-            //var result = WebRequestHelper.Post("http://localhost:8005/api/Test/PostMethod", "{\"Text\":\"price\",\"Type\":\"xdianhu_house\"}", "application/json");
+            var jj = DateTime.Now.ToString("yyyy");
 
-
-            string str = "我不是那么需要呀";
-            Regex reg = new Regex(".*不.*需要.*");
-
-            MatchCollection mc = reg.Matches(str);
-
-            foreach(var m in mc)
-            {
-
-            }
+            var aa = 10000001 % 20;
 
 
+            var count = redisClient.ListLength("TaskMessage");
 
-            Console.ReadKey();
-        }
-
-        public static void TestHttp()
-        {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            var result = WebRequestHelper.Get("http://localhost:8005/api/Test/GetMethod");
-            stopwatch.Stop();
-            Console.WriteLine($"result->{result},pid->{Thread.CurrentThread.ManagedThreadId}, timeout->{stopwatch.ElapsedMilliseconds}");
+            Console.ReadLine();
         }
     }
 }
