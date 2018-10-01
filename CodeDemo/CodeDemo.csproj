@@ -58,22 +58,6 @@
       <Project>{fe538aa5-6331-46a4-b2ab-78e7e7579fa8}</Project>
       <Name>Framework.IO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framework.Log\Framework.Log.csproj">
-      <Project>{57641d35-7834-4a92-959f-1215a50a339d}</Project>
-      <Name>Framework.Log</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.Monitor\Framework.Monitor.csproj">
-      <Project>{60291bc4-fb96-4886-a349-d3176bbcead8}</Project>
-      <Name>Framework.Monitor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.ProcessKit\Framework.ProcessKit.csproj">
-      <Project>{0ce5daad-e6c7-4ec1-acd7-1daa510764e4}</Project>
-      <Name>Framework.ProcessKit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework.PythonInteractive\Framework.PythonInteractive.csproj">
-      <Project>{d0a9864c-9626-498c-afb8-c723afb99166}</Project>
-      <Name>Framework.PythonInteractive</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Framework.RedisLib\Framework.RedisLib.csproj">
       <Project>{FA98CF43-4373-4542-88E8-8222F3228F08}</Project>
       <Name>Framework.RedisLib</Name>
