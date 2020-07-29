@@ -4,8 +4,16 @@ using System.ServiceProcess;
 
 namespace Framework.WindowsService
 {
-    public class ServiceManager
+    /// <summary>
+    /// Windows服务
+    /// </summary>
+    public static class WindowsServiceHelper
     {
+        /// <summary>
+        /// 服务是否存在
+        /// </summary>
+        /// <param name="serviceName">服务名</param>
+        /// <returns>是否存在</returns>
         public static bool IsServiceExisted(string serviceName)
         {
             ServiceController[] services = ServiceController.GetServices();
@@ -16,9 +24,14 @@ namespace Framework.WindowsService
                     return true;
                 }
             }
+
             return false;
         }
 
+        /// <summary>
+        /// 安装服务
+        /// </summary>
+        /// <param name="serviceFilePath">服务文件路径</param>
         public static void InstallService(string serviceFilePath)
         {
             using (AssemblyInstaller installer = new AssemblyInstaller())
@@ -31,6 +44,10 @@ namespace Framework.WindowsService
             }
         }
 
+        /// <summary>
+        /// 卸载服务
+        /// </summary>
+        /// <param name="serviceFilePath">服务文件路径</param>
         public static void UninstallService(string serviceFilePath)
         {
             using (AssemblyInstaller installer = new AssemblyInstaller())
@@ -41,6 +58,10 @@ namespace Framework.WindowsService
             }
         }
 
+        /// <summary>
+        /// 启动服务
+        /// </summary>
+        /// <param name="serviceName">服务名</param>
         public static void ServiceStart(string serviceName)
         {
             using (ServiceController control = new ServiceController(serviceName))
@@ -52,6 +73,10 @@ namespace Framework.WindowsService
             }
         }
 
+        /// <summary>
+        /// 停止服务
+        /// </summary>
+        /// <param name="serviceName">服务名</param>
         public static void ServiceStop(string serviceName)
         {
             using (ServiceController control = new ServiceController(serviceName))
@@ -63,6 +88,11 @@ namespace Framework.WindowsService
             }
         }
 
+        /// <summary>
+        /// 获取服务状态
+        /// </summary>
+        /// <param name="serviceName">服务名</param>
+        /// <returns>服务状态</returns>
         public static ServiceControllerStatus GetServiceStatus(string serviceName)
         {
             ServiceController[] services = ServiceController.GetServices();
@@ -73,6 +103,7 @@ namespace Framework.WindowsService
                     return sc.Status;
                 }
             }
+
             return ServiceControllerStatus.Stopped;
         }
     }
